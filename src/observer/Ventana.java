@@ -1,46 +1,28 @@
 package observer;
 
-import javafx.stage.Stage;             // |
-import javafx.scene.Group;             // |\ Librer�as necesarias
-import javafx.scene.Scene;             // |/ Para el ejemplo
-
-import java.awt.Insets;
-
-import javafx.application.Application; // |
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;  
+import javafx.scene.text.FontWeight;
 
-
-public class Ventana extends Application{
+public class Ventana {
 	private VBox root;
 	private HBox buttonHolder;
-	private Scene scene;
-	private Stage stage;
 	private Button botonAzul;
 	private Button botonAmarillo;
 	private Button botonRojo;
 	
-
-	public static void main(String[] args) {
-		launch(args);
+	public Ventana() {
+		inicializar();
 	}
 	
-	public void start(Stage primaryStage){
-		stage=primaryStage;
-		setInicio();	
-	}
-	
-	
-	public void setInicio() {
+	public void inicializar() {
 		root = new VBox();
 		root.setAlignment(Pos.CENTER);
 		
@@ -52,11 +34,6 @@ public class Ventana extends Application{
 		setButtonEvents();
 		
 		root.getChildren().add(buttonHolder);
-		
-		scene = new Scene( root, 600, 400 );
-		stage.setTitle("Ventana Principal");
-		stage.setScene(scene);
-		stage.show();
 		
 	}
 	
@@ -98,4 +75,7 @@ public class Ventana extends Application{
 		
 	}
 	
+	public Pane getRoot() {
+		return root;
+	}
 }

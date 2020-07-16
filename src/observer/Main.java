@@ -55,7 +55,7 @@ public class Main extends Application{
 		//Posicion dle boton
 		boton2.setLayoutX(105);
 		boton2.setLayoutY(200);
-		boton2.setOnAction((event) -> {    // lambda expression
+		boton2	.setOnAction((event) -> {    // lambda expression
 			root.setBackground(new Background(new BackgroundFill(Color.BLUE, null, null)));
 	      });
 		
